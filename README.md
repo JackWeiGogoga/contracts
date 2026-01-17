@@ -1,78 +1,86 @@
 # Smart Contracts Practice
 
-这是一个使用 Hardhat v2 框架的智能合约练习项目，包含众筹、ERC20 生态、NFT 和投票等示例，用于学习和实践 Solidity 开发。
+Hardhat-based smart contracts workspace featuring crowdfunding, ERC20 ecosystem, NFT, and voting examples.
 
-## 技术栈
+English | [简体中文](./README.zh-CN.md)
 
--   **框架**: Hardhat v2.27+
--   **语言**: Solidity ^0.8.28
--   **工具链**: @nomicfoundation/hardhat-toolbox
--   **依赖**: OpenZeppelin Contracts v5.4+
--   **辅助**: dotenv / axios / merkletreejs（IPFS 上传与空投白名单）
+![Solidity](https://img.shields.io/badge/solidity-0.8.28-blue)
+![Hardhat](https://img.shields.io/badge/hardhat-2.27%2B-yellow)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-## 项目结构
+[Docs](./docs) · [Contracts](./contracts) · [Tasks](./tasks) · [Scripts](./scripts) · [License](#license)
+
+## Tech Stack
+
+-   **Framework**: Hardhat v2.27+
+-   **Language**: Solidity ^0.8.28
+-   **Tooling**: @nomicfoundation/hardhat-toolbox
+-   **Dependencies**: OpenZeppelin Contracts v5.4+
+-   **Utilities**: dotenv / axios / merkletreejs (IPFS upload and airdrop allowlist)
+
+## Project Structure
 
 ```
 contracts/
 ├── contracts/
-│   ├── crowdfunding/      # 众筹合约 + Factory
-│   ├── gogoga-token/      # ERC20 生态（Token/Sale/Airdrop/Faucet）
-│   ├── gogoga-nft/        # ERC721 NFT 合约
-│   └── voting/            # 投票合约
-├── tasks/                 # Hardhat 部署/验证任务
-├── scripts/               # 辅助脚本（IPFS/merkle tree）
-├── test/                  # Hardhat 测试
-├── docs/                  # 文档与指南
-└── nft-assets/            # NFT 示例素材
+│   ├── crowdfunding/      # Crowdfunding contract + Factory
+│   ├── gogoga-token/      # ERC20 ecosystem (Token/Sale/Airdrop/Faucet)
+│   ├── gogoga-nft/        # ERC721 NFT contract
+│   └── voting/            # Voting contract
+├── tasks/                 # Hardhat deploy/verify tasks
+├── scripts/               # Helper scripts (IPFS/merkle tree)
+├── test/                  # Hardhat tests
+├── docs/                  # Notes and guides
+└── nft-assets/            # NFT sample assets
 ```
 
-## 合约列表
+## Contracts
 
-### 1. [Crowdfunding - 众筹合约](./contracts/crowdfunding/)
+### 1. [Crowdfunding](./contracts/crowdfunding/)
 
-一个功能完整的众筹合约系统，支持档位资助和自定义金额资助，包含完善的状态管理和退款机制。
+Full-featured crowdfunding system with tiered/custom funding, status control, and refunds.
 
-> 📖 [查看详细文档](./contracts/crowdfunding/README.md)
+[Docs](./contracts/crowdfunding/README.md)
 
-### 2. [GogogaToken - ERC20 生态](./contracts/gogoga-token/)
+### 2. [GogogaToken - ERC20 Ecosystem](./contracts/gogoga-token/)
 
-包含 ERC20 Token、固定价格代币售卖、Merkle 空投、Faucet 等合约。
+ERC20 token with fixed-price sale, Merkle airdrop, and faucet contracts.
 
-> 📖 [查看详细文档](./contracts/gogoga-token/README.md)
+[Docs](./contracts/gogoga-token/README.md)
 
-### 3. [Gogoga NFT - ERC721 合约](./contracts/gogoga-nft/)
+### 3. [Gogoga NFT - ERC721](./contracts/gogoga-nft/)
 
-带有公开铸造、批量空投、EIP-2981 版税和可暂停功能的 NFT 合约。
+NFT contract with public mint, batch airdrop, EIP-2981 royalties, and pausability.
 
-> 📖 [查看详细文档](./contracts/gogoga-nft/README.md)
+[Docs](./contracts/gogoga-nft/README.md)
 
-### 4. [Voting - 投票合约](./contracts/voting/Voting.sol)
+### 4. [Voting](./contracts/voting/Voting.sol)
 
-支持候选人/投票人注册、投票时段控制与暂停机制的基础投票系统。
+Voting system with candidate/voter registration, time window, and pause controls.
 
 ---
 
-## 快速开始
+## Quick Start
 
-### 安装依赖
+### Install
 
 ```bash
 npm install
 ```
 
-### 编译合约
+### Compile
 
 ```bash
 npx hardhat compile
 ```
 
-### 运行测试
+### Test
 
 ```bash
 npx hardhat test
 ```
 
-### 部署合约
+### Deploy
 
 ```bash
 npx hardhat deploy-crowdfunding --network <network-name>
@@ -84,21 +92,21 @@ npx hardhat deploy-gogoga-nft --network <network-name>
 npx hardhat deploy-voting --network <network-name>
 ```
 
-### 验证合约
+### Verify
 
 ```bash
 npx hardhat verify-contract --address <contract-address> --network <network-name>
 ```
 
-### 脚本与文档
+### Scripts and Docs
 
--   IPFS 上传与网关配置: `docs/IPFS_UPLOAD_GUIDE.md`
--   生成 Merkle Tree: `scripts/generate-merkle-tree.js`
--   上传文件到 IPFS: `scripts/upload-to-ipfs.js`
+-   IPFS upload guide: `docs/IPFS_UPLOAD_GUIDE.md`
+-   Generate Merkle tree: `scripts/generate-merkle-tree.js`
+-   Upload to IPFS: `scripts/upload-to-ipfs.js`
 
-## 环境变量
+## Environment Variables
 
-在 `.env` 中配置以下变量以支持测试网部署与验证：
+Create a `.env` file for testnet deployment and verification:
 
 ```
 INKR_URL=<sepolia-rpc-url>
