@@ -1,0 +1,11 @@
+{
+  "name": "Gogoga NFT Collection #3",
+  "description": "An amazing NFT collection",
+  "image": "ipfs://QmUg2xBrLqo86wXe45CTusUCc6jT2RtPwmoDxEc1CJgcAy/3.png",
+  "attributes": [
+    {
+      "trait_type": "Token ID",
+      "value": 3
+    }
+  ]
+}
